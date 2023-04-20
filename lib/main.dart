@@ -71,7 +71,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Mark App'),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         //       child: Container(
         // child: TextFormField(
         //   controller: accountNo,
