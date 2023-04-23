@@ -41,10 +41,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // var name = TextEditingController();
-  // var accountNo = TextEditingController();
-  // String _name;
-  // String _accountNo;
+
   String _selected;
   List<Map> _myJson = [
 
@@ -72,37 +69,34 @@ class _HomePageState extends State<HomePage> {
         title: Text('Mark App'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        //       child: Container(
-        // child: TextFormField(
-        //   controller: accountNo,
-        //   onChanged: ((String name){
-        //     setState(() {
-        //       _accountNo = name;
-        //       print(_accountNo);
-        //     });
-        //   }),
+        padding: const EdgeInsets.only(top: 50),
+
+
+        // child: Column(
+        //   children: const[
+        //   TextField(
         //   decoration: InputDecoration(
-        //       labelText: "Name",
-        //       labelStyle: TextStyle(
-        //           color: Colors.black
-        //       ),
-        //       border: OutlineInputBorder(
-        //           borderRadius: BorderRadius.circular(10)),
-        //       focusedBorder: OutlineInputBorder(
-        //           borderRadius: BorderRadius.circular(10))
+        //       border: OutlineInputBorder(),
+        //   labelText: 'Наименование',
+        // ),
         //   ),
-        //   textAlign: TextAlign.center,
-        //   validator: (value) {
-        //     if (value.isEmpty) {
-        //       return 'Please enter Name';
-        //     }
-        //     return null;
-        //   },
+        //       TextField(
+        //         decoration: InputDecoration(
+        //           border: OutlineInputBorder(),
+        //           labelText: 'Наименование',
+        //         ),
+        //       ),
+        //   ],
         // ),
 
-        child: Container(
-          padding: EdgeInsets.all(10),
+          child: Wrap (
+
+
+              runSpacing: 30,
+          children: [
+
+          Container(
+          padding: EdgeInsets.all(15),
           margin: const EdgeInsets.only(left: 20.0, right: 20.0),
           decoration: BoxDecoration(
               border: Border.all(width: 1, color: Colors.grey),
@@ -110,6 +104,7 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
+
               Expanded(
                 child: DropdownButtonHideUnderline(
                   child: ButtonTheme(
@@ -147,37 +142,29 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ],
-            // ),
+
           ),
         ),
-        // TextFormField(
-        //   controller: accountNo,
-        //   onChanged: ((String name){
-        //     setState(() {
-        //       _accountNo = name;
-        //       print(_accountNo);
-        //     });
-        //   }),
-        //   decoration: InputDecoration(
-        //       labelText: "Name",
-        //       labelStyle: TextStyle(
-        //           color: Colors.black
-        //       ),
-        //       border: OutlineInputBorder(
-        //           borderRadius: BorderRadius.circular(10)),
-        //       focusedBorder: OutlineInputBorder(
-        //           borderRadius: BorderRadius.circular(10))
-        //   ),
-        //   textAlign: TextAlign.center,
-        //   validator: (value) {
-        //     if (value.isEmpty) {
-        //       return 'Please enter Name';
-        //     }
-        //     return null;
-        //   },
-        // ),
+         Container(
+        padding: EdgeInsets.all(10),
+        margin: const EdgeInsets.only(left: 10.0, right: 10.0),
+
+           child: TextField(
+
+          decoration: InputDecoration(
+          border: OutlineInputBorder(
+              borderSide:
+              BorderSide(width: 1, color: Colors.grey),
+              borderRadius: BorderRadius.circular(10.0)
+          ),
+          labelText: 'Наименование',
+        ),
+      ),
 
       ),
+          ],
+          ),
+             ),
     );
   }
 }
