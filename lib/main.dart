@@ -146,10 +146,14 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
          Container(
-        padding: EdgeInsets.all(10),
-        margin: const EdgeInsets.only(left: 10.0, right: 10.0),
+           padding: EdgeInsets.all(10),
+           margin: const EdgeInsets.only(left: 10.0, right: 10.0),
 
-           child: TextField(
+           child: Column (
+
+
+           children: [
+              TextField(
 
           decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -160,6 +164,23 @@ class _HomePageState extends State<HomePage> {
           labelText: 'Наименование',
         ),
       ),
+             SizedBox(
+               height: 20, // <-- SEE HERE
+             ),
+             TextField(
+
+               decoration: InputDecoration(
+                 border: OutlineInputBorder(
+                     borderSide:
+                     BorderSide(width: 1, color: Colors.grey),
+                     borderRadius: BorderRadius.circular(10.0)
+                 ),
+                 labelText: 'Подлинность',
+               ),
+             ),
+
+      ],
+           ),
 
       ),
           ],
