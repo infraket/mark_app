@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'label.dart';
 
 void main() {
   runApp(MyApp());
@@ -61,6 +62,8 @@ class _HomePageState extends State<HomePage> {
       'name': 'No name'
     },
   ];
+
+  List<Label> labels = List.empty(growable: true);
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +137,7 @@ class _HomePageState extends State<HomePage> {
 
 
            children: [
-              TextField(
+               TextField(
 
           decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -145,28 +148,41 @@ class _HomePageState extends State<HomePage> {
           labelText: 'Наименование',
         ),
       ),
-             const  SizedBox(
+              SizedBox(
                height: 20, // <-- SEE HERE
              ),
-             TextField(
+              TextField(
 
                decoration: InputDecoration(
                  border: OutlineInputBorder(
                      borderSide:
-                     BorderSide(width: 1, color: Colors.grey),
+                      BorderSide(width: 1, color: Colors.grey),
                      borderRadius: BorderRadius.circular(10.0)
                  ),
                  labelText: 'Подлинность',
                ),
              ),
-             const SizedBox(
+              SizedBox(
                height: 20, // <-- SEE HERE
              ),
              Row(
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                children: [
-                 ElevatedButton(onPressed: (){}, child: const Text('Save'))
+                 ElevatedButton(onPressed: (){}, child: const Text('Save')),
+                 ElevatedButton(onPressed: (){}, child: const Text('Update'))
                ],
-             )
+
+             ),
+             SizedBox(
+               height: 20, // <-- SEE HERE
+             ),
+             labels.isEmpty ? const Text('No Label yet..', style: TextStyle(fontSize: 18),):
+             Expanded(child:
+             ListView.builder(
+               itemCount: labels.length,
+               itemBuilder: (context, index) => getRow(index),
+    ),
+    ),
 
       ],
            ),
@@ -177,4 +193,16 @@ class _HomePageState extends State<HomePage> {
              ),
     );
   }
+
+  Widget getRow(int index) {
+    return ListTile(
+      title: Column(
+        children: [
+          Text(labels[index].name),
+          Text(labels[index].identity),
+        ],
+      ),
+    );
+  }
 }
+
