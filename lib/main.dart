@@ -70,25 +70,6 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 50),
-
-
-        // child: Column(
-        //   children: const[
-        //   TextField(
-        //   decoration: InputDecoration(
-        //       border: OutlineInputBorder(),
-        //   labelText: 'Наименование',
-        // ),
-        //   ),
-        //       TextField(
-        //         decoration: InputDecoration(
-        //           border: OutlineInputBorder(),
-        //           labelText: 'Наименование',
-        //         ),
-        //       ),
-        //   ],
-        // ),
-
           child: Wrap (
 
 
@@ -164,7 +145,7 @@ class _HomePageState extends State<HomePage> {
           labelText: 'Наименование',
         ),
       ),
-             SizedBox(
+             const  SizedBox(
                height: 20, // <-- SEE HERE
              ),
              TextField(
@@ -178,6 +159,14 @@ class _HomePageState extends State<HomePage> {
                  labelText: 'Подлинность',
                ),
              ),
+             const SizedBox(
+               height: 20, // <-- SEE HERE
+             ),
+             Row(
+               children: [
+                 ElevatedButton(onPressed: (){}, child: const Text('Save'))
+               ],
+             )
 
       ],
            ),
