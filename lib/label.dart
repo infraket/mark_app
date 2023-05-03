@@ -1,5 +1,7 @@
 class Label {
   String name;
   String identity;
-  Label({required this.name,required this.identity});
+  String category;
+
+  Label({required this.name,required this.identity, required this.category});
 }
