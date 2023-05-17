@@ -20,6 +20,8 @@ class _HomePageState extends State<HomePage> {
 
   int selectedIndex = -1;
   // String _selected;
+
+
   List<Map> _myJson = [
 
     {
@@ -218,10 +220,18 @@ Widget build(BuildContext context) {
       centerTitle: true,
       title: const Text('Mark App'),
     ),
-    body: Padding(
+    body:
+    // SafeArea(
+    //   child: Container(
+    //     child:
+
+    Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
+  //     child: SingleChildScrollView(
+  //       child: Container(
+  // child: Form(
+       child: Column(
+        children: <Widget>[
           //   Container(
           //   padding: EdgeInsets.all(15),
           //   margin: const EdgeInsets.only(left: 20.0, right: 20.0),
@@ -272,7 +282,26 @@ Widget build(BuildContext context) {
           //
           //   ),
           // ),
-          //    Row(
+
+          const SizedBox(height: 10),
+          TextFormField(
+            controller: nameController,
+            decoration: const InputDecoration(
+                hintText: 'Наименование',
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ))),
+          ),
+          const SizedBox(height: 10),
+          // Container(
+          //   margin: EdgeInsets.only(top:25),
+          //   padding: EdgeInsets.all(15),
+          //   // margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+          //   decoration: BoxDecoration(
+          //       border: Border.all(width: 1, color: Colors.grey),
+          //       borderRadius: BorderRadius.circular(10)),
+          //   child: Row(
           //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
           //     children: <Widget>[
           //
@@ -284,9 +313,9 @@ Widget build(BuildContext context) {
           //               isDense: true,
           //               hint: new Text("Select Mark"),
           //               value: _selected,
-          //               onChanged: (String newValue)  {
+          //               onChanged: (String newvalue)  {
           //                 setState(() {
-          //                   _selected = newValue;
+          //                   _selected = newvalue;
           //                 });
           //
           //                 print(_selected);
@@ -315,18 +344,9 @@ Widget build(BuildContext context) {
           //     ],
           //
           //   ),
-          const SizedBox(height: 10),
-          TextField(
-            controller: nameController,
-            decoration: const InputDecoration(
-                hintText: 'Наименование',
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ))),
-          ),
-          const SizedBox(height: 10),
-          TextField(
+          // ),
+          //TextField(
+            TextFormField(
             controller: identityController,
             // keyboardType: TextInputType.number,
             // maxLength: 10,
@@ -338,7 +358,7 @@ Widget build(BuildContext context) {
                     ))),
           ),
           const SizedBox(height: 10),
-          TextField(
+          TextFormField(
             controller: categoryController,
             // keyboardType: TextInputType.number,
             // maxLength: 10,
@@ -349,6 +369,9 @@ Widget build(BuildContext context) {
                       Radius.circular(10),
                     ))),
           ),
+          const SizedBox(height: 20),
+
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -406,8 +429,10 @@ Widget build(BuildContext context) {
 
         ],
       ),
-    ),
-  );
+      ),
+    );
+
+
 }
 
 Widget getRow(int index) {
